@@ -33,22 +33,55 @@ def open(fq):
     global play_obj
     play_obj = sa.play_buffer(audio, 1, 2, fs)
 
+options = [
+    "lista1",
+    "lista2",
+    "Wednesday",
+    "Thursday",
+    "Friday"
 
-
-
+]
 zvuk1 = 82.41
 zvuk2 = 110
 zvuk3 = 146.8
 zvuk4 = 196
 zvuk5 = 246.9
 zvuk6 = 329.6
+lista1 = [82.41, 110, 146.8, 196, 246.9, 329.6]
+lista2 = [73.42, 110, 146.8, 196, 246.9, 329.6]
 
+clicked = StringVar()
+clicked.set(options[0])
 
+def zvuk(opcija):
+    global zvuk1
+    global zvuk2
+    global zvuk3
+    global zvuk4
+    global zvuk5
+    global zvuk6
+    #opcija = clicked.get()
 
+    if opcija == 'lista1':
+        zvuk1 = lista1[0]
+        zvuk2 = lista1[1]
+        zvuk3 = lista1[2]
+        zvuk4 = lista1[3]
+        zvuk5 = lista1[4]
+        zvuk6 = lista1[5]
 
+    elif opcija == 'lista2':
+        dugme1.configure(text="hello")
+        zvuk1 = lista2[0]
+        zvuk2 = lista2[1]
+        zvuk3 = lista2[2]
+        zvuk4 = lista2[3]
+        zvuk5 = lista2[4]
+        zvuk6 = lista2[5]
 
-
-
+drop = OptionMenu(root, clicked, *options, command=zvuk)
+drop.config(bg = "GREEN",fg= 'red')
+drop.grid(row=0,column=3,padx=115)
 
 
 
