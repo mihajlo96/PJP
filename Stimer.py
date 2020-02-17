@@ -4,8 +4,8 @@ from tkinter import *
 
 root = Tk()
 root.title("Stimer")
-root.geometry("309x330+400+175")
-root.configure(background='#837e7e')
+root.geometry("359x370+400+175")
+root.configure(background='grey')
 
 
 
@@ -91,12 +91,12 @@ def zvuk(opcija):
         zvuk6 = DropD[5]
 
     elif opcija == 'HalfStepDown':
-        dugme1.configure(text="D#")
+        dugme1.configure(text="D#", padx = 29)
         dugme2.configure(text="G#")
         dugme3.configure(text="C#")
         dugme4.configure(text="F#")
         dugme5.configure(text="A#")
-        dugme6.configure(text="D#")
+        dugme6.configure(text="D#", padx = 29)
         zvuk1 = HalfStepDown[0]
         zvuk2 = HalfStepDown[1]
         zvuk3 = HalfStepDown[2]
@@ -104,7 +104,7 @@ def zvuk(opcija):
         zvuk5 = HalfStepDown[4]
         zvuk6 = HalfStepDown[5]
     elif opcija == 'OpenG':
-        dugme1.configure(text="D")
+        dugme1.configure(text="D", )
         dugme2.configure(text="G")
         dugme3.configure(text="D")
         dugme4.configure(text="G")
@@ -118,8 +118,8 @@ def zvuk(opcija):
         zvuk6 = OpenG[5]
 
 drop = OptionMenu(root, clicked, *options, command=zvuk)
-drop.config(bg = "GREEN",fg= 'red')
-drop.grid(row=0,column=3,padx=115)
+drop.config(width=13)
+drop.grid(row=0,column=3,padx=115, pady = 10)
 
 
 
@@ -127,25 +127,25 @@ drop.grid(row=0,column=3,padx=115)
 
 
 
-dugme1 = Button(root, text="E",padx = 20, command=lambda: open(zvuk1) )
-dugme1.grid(row=1,column=3, pady = 20)
+dugme1 = Button(root, text="E",padx = 30, pady = 10, command=lambda: open(zvuk1) )
+dugme1.grid(row=1,column=3)
 
-dugme2 = Button(root, text="A",padx = 20, command=lambda: open(zvuk2) )
+dugme2 = Button(root, text="A",padx = 29, pady = 10, command=lambda: open(zvuk2) )
 dugme2.grid(row=2,column=3)
 
-dugme3 = Button(root, text="D",padx = 20, command=lambda: open(zvuk3) )
+dugme3 = Button(root, text="D",padx = 29, pady = 10, command=lambda: open(zvuk3) )
 dugme3.grid(row=3,column=3)
 
-dugme4 = Button(root, text="G",padx = 20, command=lambda: open(zvuk4) )
+dugme4 = Button(root, text="G",padx = 29, pady = 10, command=lambda: open(zvuk4) )
 dugme4.grid(row=4,column=3)
 
-dugme5 = Button(root, text="H",padx = 20, command=lambda: open(zvuk5) )
+dugme5 = Button(root, text="H",padx = 28, pady = 10, command=lambda: open(zvuk5) )
 dugme5.grid(row=5,column=3)
 
-dugme6 = Button(root, text="E",padx = 20, command=lambda: open(zvuk6) )
+dugme6 = Button(root, text="E",padx = 30, pady = 10, command=lambda: open(zvuk6) )
 dugme6.grid(row=6,column=3)
 
-btn_stop = Button(root, text="STOP", command=lambda: stop() )
+btn_stop = Button(root, text="STOP", padx = 10, command=lambda: stop() )
 btn_stop.grid(row=7,column=3,columnspan=2)
 
 root.mainloop()
