@@ -3,7 +3,7 @@ import simpleaudio as sa
 from tkinter import *
 
 root = Tk()
-root.title("Messages")
+root.title("Stimer")
 root.geometry("309x330+400+175")
 root.configure(background='#837e7e')
 
@@ -39,8 +39,8 @@ options = [
     "Wednesday",
     "Thursday",
     "Friday"
-
 ]
+
 zvuk1 = 82.41
 zvuk2 = 110
 zvuk3 = 146.8
@@ -60,7 +60,6 @@ def zvuk(opcija):
     global zvuk4
     global zvuk5
     global zvuk6
-    #opcija = clicked.get()
 
     if opcija == 'lista1':
         zvuk1 = lista1[0]
@@ -82,6 +81,10 @@ def zvuk(opcija):
 drop = OptionMenu(root, clicked, *options, command=zvuk)
 drop.config(bg = "GREEN",fg= 'red')
 drop.grid(row=0,column=3,padx=115)
+
+
+
+
 
 
 
